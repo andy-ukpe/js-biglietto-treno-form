@@ -21,6 +21,7 @@ h1{
   text-transform: uppercase;
 }
 .container-flex{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
