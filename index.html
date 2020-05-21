@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form Biglietto del Treno</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="cruscotto">
+      <div class="container-flex">
+        <h1>Calcola il prezzo del tuo biglietto</h1>
+        <div class="banda">
+          <ul class="form">
+            <li>
+              <label>Nome e Cognome</label><br>
+              <input type="text" id="formName">
+            </li>
+            <li>
+              <label>Km da percorrere</label><br>
+              <input type="number" id="formKm">
+            </li>
+            <li>
+              <label>Fascia d'Età</label><br>
+              <select id="fasciaEta">
+                <option id="magg">Maggiorenne</option>
+                <option id="min">Minorenne</option>
+                <option id="over">Over 65</option>
+              </select>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="container-flex">
+        <h1>Il tuo biglietto</h1>
+        <div class="banda">
+          <div class="bigl">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/scripts.js"></script>
+  </body>
+
+</html>
