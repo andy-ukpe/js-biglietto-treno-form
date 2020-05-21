@@ -9,15 +9,16 @@
     <div class="cruscotto">
       <div class="container-flex">
         <h1>Calcola il prezzo del tuo biglietto</h1>
+        <!-- form -->
         <div class="banda">
           <ul class="form">
             <li>
               <label>Nome e Cognome</label><br>
-              <input type="text" id="formName">
+              <input type="text" id="form-Name">
             </li>
             <li>
               <label>Km da percorrere</label><br>
-              <input type="number" id="formKm">
+              <input type="number" id="form-Km">
             </li>
             <li>
               <label>Fascia d'Età</label><br>
@@ -28,17 +29,65 @@
               </select>
             </li>
           </ul>
-
+          <!-- bottoni -->
+          <ul class="buttons">
+            <li><button type="button" id="Generate">GENERA</button>
+            </li>
+            <li><button type="button" id="annulla">ANNULLA</button>
+            </li>
+          </ul>
+          <!-- fine bottoni -->
         </div>
       </div>
+      <!-- fine form -->
+      <!-- inizio biglietto -->
       <div class="container-flex">
         <h1>Il tuo biglietto</h1>
         <div class="banda">
           <div class="bigl">
+            <h2>Dettagli passegeri</h2>
+            <!-- sezione nome -->
+            <div class="nome passegero">
+              <p>NOME DEL PAGGERO: <span id="bigl-Name"></span></p>
+            </div>
+            <!-- fine sezione nome -->
+            <!-- sezione dettagli biglietto -->
 
+            <div class="dettagli biglietto">
+              <!-- offerta -->
+              <div class="offerta">
+                <p>offerta
+                <br>
+                <span id="bigl-Disc"></span></p>
+
+              </div>
+              <!-- carrozza -->
+              <div class="carrozza">
+                <p>carrozza
+                <br>
+                <span id="bigl-Sit"></span></p>
+
+              </div>
+              <!-- codice -->
+              <div class="codice">
+                <p>codice CP
+                <br>
+                <span id="bigl-Code"></span></p>
+
+              </div>
+              <!-- codice -->
+              <div class="costo">
+                <p>Costo del Biglietto
+                <br>
+                <span id="bigl-Cost"></span></p>
+
+              </div>
+            </div>
+            <!-- fine sezione dettagli biglietto -->
           </div>
         </div>
       </div>
+      <!-- fine biglietto -->
 
     </div>
     <script src="js/scripts.js"></script>
