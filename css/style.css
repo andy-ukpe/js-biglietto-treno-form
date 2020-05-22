@@ -31,7 +31,6 @@ h1{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 /* form */
@@ -119,10 +118,6 @@ h3{
   background-color: grey;
   width: 230px;
 }
-.display-none{
-   /*display: none; */
-
-}
-.display-block{
-  display: block;
+#stampa-biglietto{
+  display: none;
 }
