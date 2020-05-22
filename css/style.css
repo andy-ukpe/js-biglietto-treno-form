@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 /* generali */
 body{
@@ -24,7 +25,6 @@ h1{
   padding: 10px 0;
   color: white;
   font-size: 17px;
-  font-family: sans-serif;
   text-transform: uppercase;
 }
 .container-flex{
@@ -120,7 +120,7 @@ h3{
   width: 230px;
 }
 .display-none{
-  /* display: none; */
+   /*display: none; */
 
 }
 .display-block{

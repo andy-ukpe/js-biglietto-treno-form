@@ -1,49 +1,53 @@
 // elementi form
+  // buttons
 var generateButton = document.getElementById('Generate');
 var nullButton = document.getElementById('annulla');
+  //form
 var formName = document.getElementById('form-Name');
 var formKm = document.getElementById('form-Km');
 var etaViaggiatore = document.getElementById('fasciaEta');
 
-
 // elementi Biglietto
 var biglName = document.getElementById('bigl-Name');
+biglName.trim;
 var biglCosto = document.getElementById('bigl-Cost');
+var offerta = document.getElementById('bigl-off');
 
 // altro
 var formKmValue;
-var costoValue
+var costoValue;
+
 
 // evento quando si clicca su genera
 generateButton.addEventListener('click',
   function(){
 
     // prezzo unitario
-    formKmValue = formKm.value;
-    etaViaggiatore = etaViaggiatore.value;
+    formKmValue = parseInt(formKm.value);
+    formEtaValue = etaViaggiatore.value;
     var prezzoUnitario = formKmValue * 0.21;
 
-    if( etaViaggiatore == 'Minorenne' ) {
+    if( formEtaValue == 'Minorenne' ) {
 
       // prezzo junior
       var prezzoJunior = prezzoUnitario - (  prezzoUnitario * 20 / 100 );
       console.log(prezzoJunior);
       biglCosto.innerHTML = prezzoJunior.toFixed(2) + '€';
+      offerta.innerHTML = 'offerta Junior';
 
-
-   } else if( etaViaggiatore == 'Over 65' ) {
+   } else if( formEtaValue == 'Over 65' ) {
 
       //prezzo major
       var prezzoMajor = prezzoUnitario - ( ( prezzoUnitario * 40) / 100 );
 
       biglCosto.innerHTML = prezzoMajor.toFixed(2) + '€';
-
+      offerta.innerHTML = 'offerta Silver';
    } else {
 
       //Costo
       costoValue = prezzoUnitario.toFixed(2);
-      biglCosto.innerHTML = prezzoUnitario + '€';
-
+      biglCosto.innerHTML = costoValue + '€';
+      offerta.innerHTML = '/';
    }
 
     // nome sul Biglietto
@@ -62,6 +66,8 @@ nullButton.addEventListener('click',
     formKm.value = '';
     // fasciaEta
     fasciaEta.value = 'Maggiorenne';
+    // Offerta
+    offerta.innerHTML = '';
     // prezzo
     biglCosto.innerHTML = '';
   }
