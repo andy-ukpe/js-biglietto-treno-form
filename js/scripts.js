@@ -25,61 +25,75 @@ var costo;
 
 // evento quando si clicca su genera
 generateButton.addEventListener('click',
-  function(){
+  function() {
 
-      display.style.display="block";
+    formKmValue = parseInt(formKm.value);
+    formEtaValue = etaViaggiatore.value;
+    var nome = formName.value;
 
-      // prezzo unitario
-      formKmValue = parseInt(formKm.value);
-      formEtaValue = etaViaggiatore.value;
-      var prezzoUnitario = formKmValue * 0.21;
+    if( nome.lenght <= 0 || isNaN(formKmValue) ){
 
-      if( formEtaValue == 'Minorenne' ) {
+      display.className = 'hidden';
+      alert('Attenzione! Inserire i dati correttamente');
 
-        // prezzo junior
-        costo = prezzoUnitario - (  prezzoUnitario * 20 / 100 );
-        // offerta
-        offerta = 'offerta Junior';
+    } else if ( !isNaN(nome)) {
+      display.className = 'hidden';
+      alert('Attenzione! Inserire caratteri alfabetici')
 
-     } else if( formEtaValue == 'Over 65' ) {
 
-        //prezzo major
-        costo = prezzoUnitario - ( ( prezzoUnitario * 40) / 100 );
-        // offerta
-        offerta = 'offerta Silver';
-     } else {
+    } else {
 
-        //Costo
-        costo = prezzoUnitario;
-        // offerta
-        offerta = '/';
-     }
+         // prezzo unitario
+         var prezzoUnitario = formKmValue * 0.21;
 
-     // STAMPA BIGLIETTO
-     // nome sul Biglietto
-     biglName.innerHTML = formName.value;
-     // offerta
-     biglOfferta.innerHTML = offerta ;
-     // Carrozza
-     biglCarrozza.innerHTML = Math.floor(Math.random() * 20 ) + 1 ;
-     // Codice
-     biglCodice.innerHTML = Math.floor(Math.random() * 100000 ) + 1 ;
-     // costo
-     biglCosto.innerHTML = costo.toFixed(2) + '€';
+         if( formEtaValue == 'Minorenne' ) {
 
-     // display-block
-     display.className = display.classList + " display-block";
+           // prezzo junior
+           costo = prezzoUnitario - (  prezzoUnitario * 20 / 100 );
+           // offerta
+           offerta = 'offerta Junior';
 
-    }
+          } else if( formEtaValue == 'Over 65' ) {
 
+           //prezzo major
+           costo = prezzoUnitario - ( ( prezzoUnitario * 40) / 100 );
+           // offerta
+           offerta = 'offerta Silver';
+            } else {
+
+           //Costo
+           costo = prezzoUnitario;
+           // offerta
+           offerta = '/';
+            }
+
+            // STAMPA INFORMAZIONI
+            // nome sul Biglietto
+            biglName.innerHTML = formName.value;
+            // offerta
+            biglOfferta.innerHTML = offerta ;
+            // Carrozza
+            biglCarrozza.innerHTML = Math.floor(Math.random() * 20 ) + 1 ;
+            // Codice
+            biglCodice.innerHTML = Math.floor(Math.random() * 100000 ) + 1 ;
+            // costo
+            biglCosto.innerHTML = costo.toFixed(2) + '€';
+
+            // MOSTRA BIGLIETTO
+            display.className = 'visible';
+       }
+
+  }
 );
 
 // evento quando si clicca ANNULLA
 nullButton.addEventListener('click',
   function(){
+    // NASCONDI BIGLIETTO
+    display.className = 'hidden';
+
     // RESET BIGLIETTO
     // annulla nome
-    display.style.display="none";
     formName.value = '';
     biglName.innerHTML = '';
     // annulla km
@@ -94,7 +108,6 @@ nullButton.addEventListener('click',
     biglCodice.innerHTML = '' ;
     // prezzo
     biglCosto.innerHTML = '';
-    // display
-    display.className = display.classList + " display-none";
+
   }
 );

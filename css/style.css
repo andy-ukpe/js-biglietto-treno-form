@@ -11,13 +11,13 @@ body{
   background-color: #b91450;
 }
 /* container */
-.row{
+#form, #stampa-biglietto{
   height: 180px;
   width: 80%;
   background-color: white;
   padding: 15px;
 }
-.row.rounded{
+.rounded{
   border-radius: 7px;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
 }
@@ -118,6 +118,9 @@ h3{
   background-color: grey;
   width: 230px;
 }
-#stampa-biglietto{
+.hidden{
   display: none;
+}
+.visible{
+  display: block;
 }
